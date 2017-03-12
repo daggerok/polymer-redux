@@ -5,7 +5,7 @@ node_js:
   - 7
 script:
   - npm i
-  - npm u
+  - npm update
 after_script:
   - cat *.log | true
   - npm outdated
