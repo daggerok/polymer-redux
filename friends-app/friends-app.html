@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="./styles/friends-styles.css">
+
+<link rel="import" href="../bower_components/polymer/polymer.html"/>
+
+<link rel="import" href="components/friends-counter.html">
+<link rel="import" href="components/friends-input.html">
+<link rel="import" href="components/friends-list.html">
+
+<dom-module id="friends-app">
+  <template>
+    <div id="app">
+      <friends-counter></friends-counter>
+      <friends-input></friends-input>
+      <friends-list></friends-list>
+    </div>
+  </template>
+
+  <style>
+    #app {
+      padding: 1%;
+    }
+  </style>
+
+  <script>
+    Polymer({
+      is: 'friends-app',
+    });
+  </script>
+</dom-module>

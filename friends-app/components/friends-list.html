@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html"/>
+<link rel="import" href="../stores/friends-store.html"/>
+
+<dom-module id="friends-list">
+  <template>
+    <ul>
+      <template is="dom-repeat" items="[[friends]]" as="friend">
+        <li>[[friend]]</li>
+      </template>
+    </ul>
+  </template>
+
+  <style>
+    ul.friends-list {
+      list-style-type: none;
+    }
+  </style>
+
+  <script>
+    Polymer({
+      is: 'friends-list',
+      behaviors: [
+        ReduxBehavior,
+      ],
+      properties: {
+        friends: {
+          type: Array,
+          statePath: 'friends', // this is object in state of redux store
+        },
+      },
+    });
+  </script>
+</dom-module>
+

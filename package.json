@@ -1,0 +1,27 @@
+{
+  "name": "friends",
+  "version": "0.0.1",
+  "private": true,
+  "description": "one way data flow using polymer and redux",
+  "main": "index.html",
+  "scripts": {
+    "postinstall": "bower install webcomponentsjs polymer polymer-redux normalize.css",
+    "start": "lite-server"
+  },
+  "config": {
+    "bower_directory": "bower_components"
+  },
+  "keywords": [
+    "polymer",
+    "redux"
+  ],
+  "author": "daggerok",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "3.6.0"
+  },
+  "devDependencies": {
+    "bower": "1.8.0",
+    "lite-server": "2.3.0"
+  }
+}

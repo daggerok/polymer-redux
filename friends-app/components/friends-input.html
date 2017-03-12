@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html"/>
+<link rel="import" href="../stores/friends-store.html"/>
+
+<dom-module id="friends-input">
+  <template>
+    <input type="text" id="friend">
+    <button on-tap="addFriend">add friend</button>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'friends-input',
+      behaviors: [
+        ReduxBehavior,
+      ],
+      actions: {
+        addAction: function add(friendName) {
+          return {
+            type: 'ADD_FRIEND',
+            friend: friendName,
+          };
+        },
+      },
+      addFriend: function addFriend() {
+        const input = this.$.friend;
+        if (input.value) {
+          this.dispatch('addAction', input.value);
+          input.value = null;
+          input.focus();
+        }
+      }
+    });
+  </script>
+</dom-module>

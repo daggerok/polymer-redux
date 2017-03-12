@@ -1,0 +1,30 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html"/>
+<link rel="import" href="../stores/friends-store.html"/>
+
+<dom-module id="friends-counter">
+  <template>
+    <h3>you have [[friendsCounter]] friends.</h3>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'friends-counter',
+      behaviors: [
+        ReduxBehavior,
+      ],
+      properties: {
+        friends: {
+          type: Array,
+          statePath: 'friends', // this is object in state of redux store
+        },
+        friendsCounter: {
+          type: Number,
+          computed: 'count(friends)',
+        },
+      },
+      count: function count(friends) {
+        return friends.length;
+      },
+    });
+  </script>
+</dom-module>
